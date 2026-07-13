@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Trung Dương 1993 - Người Đàn Ông Tử Tế, Ấm Áp & Tôn Trọng</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #030d0a; /* Nền tối xanh lục ngọc bảo huyền bí, lịch lãm */
+            overflow-x: hidden;
+        }
+        .gentleman-title {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Hiệu ứng hào quang ngọc bảo ấm áp */
+        .emerald-glow {
+            box-shadow: 0 0 35px rgba(16, 185, 129, 0.2);
+        }
+        .text-emerald-glow {
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+        }
+        /* Hiệu ứng lá may mắn và hạt sáng vàng rơi nhẹ nhàng */
+        @keyframes fall-effect {
+            0% {
+                transform: translateY(-10vh) translateX(0) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(110vh) translateX(80px) rotate(360deg) scale(1);
+                opacity: 0;
+            }
+        }
+        .falling-clover {
+            position: absolute;
+            pointer-events: none;
+            animation: fall-effect 11s linear infinite;
+        }
+        /* Glassmorphic card cao cấp */
+        .premium-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(16, 185, 129, 0.12);
+        }
+        .premium-card-hover:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            transform: translateY(-5px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        /* Viền chuyển sắc phong cách quý ông hiện đại */
+        .royal-border {
+            border: 3px solid transparent;
+            background-image: linear-gradient(#030d0a, #030d0a), linear-gradient(to right, #10b981, #f59e0b, #059669, #10b981);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            animation: royal-wave 7s linear infinite;
+            background-size: 200% auto;
+        }
+        @keyframes royal-wave {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="text-slate-200 antialiased relative">
+
+    <!-- Container hiệu ứng lá phong và bụi vàng bay lãng mạn -->
+    <div id="particle-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 premium-card border-b border-emerald-500/10 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2.5 cursor-pointer">
+                <span class="text-2xl">🍀</span>
+                <span class="font-bold text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-amber-300 text-emerald-glow">
+                    MR. DƯƠNG <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300">EST. 1993</span>
+                </span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-semibold text-emerald-100/70">
+                <a href="#about" class="hover:text-emerald-400 transition-colors">Về Anh</a>
+                <a href="#values" class="hover:text-emerald-400 transition-colors">Hệ Giá Trị</a>
+                <a href="#kpi" class="hover:text-emerald-400 transition-colors">Cam Kết Tôn Trọng</a>
+                <a href="#compatibility" class="hover:text-emerald-400 transition-colors">Độ Hòa Hợp</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <!-- Nút bật nhạc Guitar Acoustic ngọt ngào -->
+                <button onclick="toggleGentleMusic()" id="musicBtn" class="p-2.5 rounded-full bg-white/5 border border-emerald-500/20 text-emerald-300 hover:text-white hover:bg-emerald-500/20 transition-all" title="Bật nhạc mộc mạc ấm áp">
+                    🎸
+                </button>
+                <a href="#booking" class="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-slate-950 px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider shadow-lg hover:shadow-emerald-500/20 transition-all transform hover:-translate-y-0.5">
+                    Gặp Gỡ Anh
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 py-12 md:py-24 grid md:grid-cols-12 gap-12 items-center relative z-10">
+        <!-- Hero Left Info -->
+        <div class="md:col-span-7 space-y-6 text-center md:text-left">
+            <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
+                🤝 Đàn Ông Tử Tế, Ấm Áp, Biết Chia Sẻ & Tôn Trọng
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black leading-tight text-white gentleman-title">
+                Sự hiền lành của anh,<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-amber-300 text-emerald-glow">
+                    là sự tôn trọng lớn nhất dành cho em!
+                </span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-300 leading-relaxed max-w-xl">
+                Chào em, anh là **Nguyễn Trung Dương (1993)**. Ở độ tuổi này, anh hiểu rằng một mối quan hệ bền vững không được xây dựng từ những lời hứa sáo rỗng hay cái tôi độc đoán. Đối với anh, tình yêu đích thực là sự bình đẳng, nâng niu, cùng nhau san sẻ mọi buồn vui và tôn trọng tuyệt đối thế giới riêng của nhau.
+            </p>
+            
+            <div class="flex flex-wrap gap-4 pt-2 justify-center md:justify-start">
+                <a href="#compatibility" class="px-7 py-4 bg-gradient-to-r from-emerald-500 to-amber-500 hover:opacity-95 text-slate-950 font-bold rounded-2xl shadow-xl transition-all transform hover:scale-105 flex items-center gap-2 emerald-glow">
+                    💖 Xem Độ Hòa Hợp
+                </a>
+                <button onclick="spawnCloverBurst(event)" class="px-7 py-4 bg-white/5 hover:bg-white/10 border border-emerald-500/20 hover:border-emerald-500/50 text-emerald-200 font-bold rounded-2xl transition-all transform hover:scale-105 flex items-center gap-2">
+                    Gửi Năng Lượng May Mắn 🍀
+                </button>
+            </div>
+            
+            <!-- Quick Stats Row -->
+            <div class="grid grid-cols-3 gap-4 pt-8 border-t border-emerald-500/10">
+                <div class="text-center md:text-left">
+                    <span class="block text-3xl font-black text-emerald-400 text-emerald-glow">1993</span>
+                    <span class="text-[10px] md:text-xs text-emerald-200/60 font-medium uppercase tracking-wider">Tuổi Quý Dậu (Tinh tế, chu đáo)</span>
+                </div>
+                <div class="text-center md:text-left">
+                    <span class="block text-3xl font-black text-emerald-400 text-emerald-glow">0%</span>
+                    <span class="text-[10px] md:text-xs text-emerald-200/60 font-medium uppercase tracking-wider">Gia trưởng & Độc đoán</span>
+                </div>
+                <div class="text-center md:text-left">
+                    <span class="block text-3xl font-black text-emerald-400 text-emerald-glow">100%</span>
+                    <span class="text-[10px] md:text-xs text-emerald-200/60 font-medium uppercase tracking-wider">Hiền lành & Ấm áp</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Right Content: Tôn vinh bức ảnh chân dung người đàn ông tử tế -->
+        <div class="md:col-span-5 relative flex justify-center">
+            <!-- Hiệu ứng bóng sáng ngọc bảo phía sau ảnh -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500 to-amber-500 rounded-3xl rotate-3 scale-102 opacity-20 blur-3xl"></div>
+            
+            <!-- Picture Container -->
+            <div class="relative max-w-sm w-full">
+                <!-- Royal border lấp lánh tôn vinh bức ảnh -->
+                <div class="royal-border p-2 rounded-3xl shadow-2xl emerald-glow bg-slate-900 overflow-hidden">
+                    <img id="gentleman-photo" src="aduong.jpg" alt="Nguyễn Trung Dương (1993)" 
+                         onerror="this.src='https://placehold.co/600x800/030d0a/10b981?text=Nguyen+Trung+Duong+1993'"
+                         class="w-full h-auto object-cover rounded-2xl hover:scale-[1.02] transition-all duration-700 ease-out">
+                </div>
+
+                <!-- Thẻ cam kết tình cảm tôn trọng và hiền lành -->
+                <div class="absolute -bottom-6 -left-6 bg-slate-950/95 border border-emerald-500/20 p-4 rounded-2xl shadow-2xl max-w-[240px] flex items-center gap-3.5 backdrop-blur-md transform hover:scale-105 transition-all">
+                    <div class="p-3 bg-emerald-500/10 rounded-xl text-emerald-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">Hôn Nhân & Gia Đình</p>
+                        <p class="text-xs text-slate-200">Không gia trưởng, luôn tôn trọng tiếng nói của đối phương</p>
+                    </div>
+                </div>
+
+                <!-- Thẻ Hot Deal nhẹ nhàng, duyên dáng -->
+                <div class="absolute -top-4 -right-4 bg-gradient-to-r from-emerald-500 to-amber-500 text-slate-950 text-xs font-black px-4 py-1.5 rounded-full shadow-lg transform rotate-6">
+                    BẢN LĨNH & TỬ TẾ ✨
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section About & Values -->
+    <section id="about" class="relative z-10 py-20 bg-gradient-to-b from-[#030d0a] via-[#061813] to-[#030d0a] border-y border-emerald-500/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="bg-emerald-500/10 text-emerald-300 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider border border-emerald-500/20">Hồ Sơ Chân Thực</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-3 text-white gentleman-title">Sự Hiền Lành Tạo Nên Sức Mạnh Chân Thật</h2>
+                <p class="text-sm text-slate-400 mt-2">Đàn ông đích thực không cần lớn tiếng. Bản lĩnh của anh nằm ở sự điềm đạm, kiên nhẫn và đôi bàn tay luôn sẵn sàng sẻ chia.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Left Box: Chân dung tính cách -->
+                <div class="premium-card premium-card-hover p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-xl group-hover:bg-emerald-500/15 transition-all"></div>
+                    <h3 class="text-xl font-bold text-emerald-300 border-b border-emerald-500/10 pb-3 flex items-center gap-2">
+                        <span>👔</span> Phẩm Chất Đậm Chất Hiện Đại
+                    </h3>
+                    <ul class="space-y-4 text-sm text-slate-300 mt-6">
+                        <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                            <span class="font-medium text-emerald-200/70">Năm sinh:</span> 
+                            <span class="font-bold text-slate-100">1993 (Tuổi Quý Dậu chín chắn, sâu sắc)</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                            <span class="font-medium text-emerald-200/70">Nói "Không" với gia trưởng:</span> 
+                            <span class="font-bold text-emerald-400">Tôn trọng tự do cá nhân, ước mơ & bạn bè của em</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                            <span class="font-medium text-emerald-200/70">Cùng xây mái ấm:</span> 
+                            <span class="font-bold text-slate-100">Nấu cơm, dọn dẹp, rửa bát là việc chung, không của riêng ai</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-2">
+                            <span class="font-medium text-emerald-200/70">Cách giải quyết bất đồng:</span> 
+                            <span class="font-bold text-amber-400">Luôn ôn hòa, lắng nghe, không lớn tiếng dọa nạt</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Box: Tư duy và Lối sống -->
+                <div class="premium-card premium-card-hover p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-full blur-xl group-hover:bg-amber-500/15 transition-all"></div>
+                    <h3 class="text-xl font-bold text-amber-300 border-b border-amber-500/10 pb-3 flex items-center gap-2">
+                        <span>🌱</span> Trái Tim Ấm Áp & Lối Sống Lành Mạnh
+                    </h3>
+                    <ul class="space-y-4 text-sm text-slate-300 mt-6">
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400 text-lg">✓</span>
+                            <span><strong>Kiên Nhẫn Tuyệt Đối:</strong> Luôn ở bên dỗ dành những lúc em mệt mỏi nhất. Anh không phán xét, không áp đặt ý kiến của bản thân lên cuộc sống của em.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400 text-lg">✓</span>
+                            <span><strong>Hành Động Từ Trái Tim:</strong> Thể hiện tình yêu qua những sự chăm sóc nhỏ nhặt hằng ngày: gạt chỗ để chân xe, bóc tôm cho em ăn, hay che ô cho em khỏi nắng gắt.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400 text-lg">✓</span>
+                            <span><strong>Hậu Phương Vững Chắc:</strong> Luôn khích lệ, ủng hộ em trên con đường sự nghiệp và phát triển bản thân. Thành công của em chính là niềm tự hào lớn nhất của anh.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KPI Assessment Section -->
+    <section id="kpi" class="relative z-10 py-20 bg-[#030d0a]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="bg-emerald-500/10 text-emerald-300 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider border border-emerald-500/20">Chỉ Số Bình Đẳng</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-3 text-white gentleman-title">Cam Kết Bản Lĩnh Đàn Ông Thời Đại Mới</h2>
+                <p class="text-sm text-slate-400 mt-2">Bảng kiểm nghiệm tiêu chuẩn "Bạn trai lý tưởng" được bảo chứng bằng những hành động thực tế hằng ngày.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Progress Bars -->
+                <div class="space-y-6">
+                    <!-- Progress Bar 1 -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-sm font-semibold text-emerald-100">
+                            <span>Sự kiên nhẫn & Kiềm chế nóng giận</span>
+                            <span class="text-emerald-400 font-bold">100%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-emerald-500/20">
+                            <div class="bg-gradient-to-r from-emerald-500 via-emerald-400 to-amber-500 h-full rounded-full animate-pulse" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar 2 -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-sm font-semibold text-emerald-100">
+                            <span>Mức độ san sẻ việc nhà & nấu nướng</span>
+                            <span class="text-emerald-400 font-bold">100%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-emerald-500/20">
+                            <div class="bg-gradient-to-r from-emerald-500 via-emerald-400 to-amber-500 h-full rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar 3 -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-sm font-semibold text-emerald-100">
+                            <span>Tôn trọng ý kiến & Không gian riêng của em</span>
+                            <span class="text-emerald-400 font-bold">100%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-emerald-500/20">
+                            <div class="bg-gradient-to-r from-emerald-500 via-emerald-400 to-amber-500 h-full rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar 4 -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-sm font-semibold text-emerald-100">
+                            <span>Sự ngọt ngào, tinh tế & quà tặng bất ngờ</span>
+                            <span class="text-emerald-400 font-bold">95%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-emerald-500/20">
+                            <div class="bg-gradient-to-r from-emerald-500 via-emerald-400 to-amber-500 h-full rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Romantic Quote Frame -->
+                <div class="bg-gradient-to-br from-[#051a14]/80 to-[#1b170c]/80 border border-emerald-500/20 p-8 rounded-3xl relative overflow-hidden shadow-2xl emerald-glow">
+                    <div class="absolute -right-6 -bottom-6 text-9xl opacity-5 pointer-events-none select-none">🍀</div>
+                    <div class="text-emerald-400 text-4xl mb-4 font-serif">“</div>
+                    <p class="text-slate-200 font-medium italic text-base leading-relaxed mb-6">
+                        "Người ta thường nói đàn ông thì phải góc cạnh, gai góc hay độc đoán để thể hiện quyền lực. Nhưng anh nghĩ, bản lĩnh đích thực của người đàn ông nằm ở sự dịu dàng khi đối xử với người phụ nữ mình yêu, là việc thấu hiểu cô ấy mệt mỏi ra sao để ôm lấy và cùng cô ấy san sẻ gánh nặng cuộc sống."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center font-bold text-emerald-400">Ntd</div>
+                        <div>
+                            <p class="text-sm font-bold text-white">Nguyễn Trung Dương</p>
+                            <p class="text-xs text-emerald-300/80">Quý Ông Ấm Áp Sinh Năm 1993</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compatibility Quiz Section -->
+    <section id="compatibility" class="relative z-10 py-20 bg-gradient-to-b from-[#030d0a] via-[#061813] to-[#030d0a] border-t border-emerald-500/10">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="bg-emerald-500/10 text-emerald-300 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider border border-emerald-500/20">Trắc nghiệm thấu hiểu</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-3 text-white gentleman-title">Đo Độ Đồng Điệu Trong Tâm Hồn 💘</h2>
+                <p class="text-sm text-slate-400 mt-2">Xem quan niệm sống của em có phù hợp với một người đàn ông hiền lành, tôn trọng và yêu thương gia đình như anh Dương không nhé.</p>
+            </div>
+
+            <!-- Quiz Card -->
+            <div class="premium-card p-6 md:p-10 rounded-3xl border border-emerald-500/20 emerald-glow relative overflow-hidden">
+                <form id="compatibilityForm" class="space-y-8">
+                    <!-- Q1 -->
+                    <div class="space-y-3">
+                        <p class="font-bold text-emerald-200 flex items-center gap-2">
+                            <span class="flex items-center justify-center h-6 w-6 rounded-full bg-emerald-500/20 text-xs text-emerald-300 font-mono">1</span>
+                            Đối với em, ai nên là người lo liệu việc dọn dẹp nhà cửa và nấu ăn?
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-emerald-500/10 hover:border-emerald-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ1" value="A" class="accent-emerald-500 scale-125" required>
+                                <span class="text-xs md:text-sm text-slate-300">Đó là trách nhiệm của phụ nữ vì gia đình cần bàn tay nữ công gia chánh</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-emerald-500/10 hover:border-emerald-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ1" value="B" class="accent-emerald-500 scale-125">
+                                <span class="text-xs md:text-sm text-slate-300">Cả hai cùng chia sẻ ngọt bùi, cùng dọn dẹp và nấu ăn để sưởi ấm tổ ấm</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-emerald-500/10 hover:border-emerald-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ1" value="C" class="accent-emerald-500 scale-125">
+                                <span class="text-xs md:text-sm text-slate-300">Ai rảnh thì làm, bận quá thì gọi đồ ngoài, không cần đặt nặng nề</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="space-y-3">
+                        <p class="font-bold text-emerald-200 flex items-center gap-2">
+                            <span class="flex items-center justify-center h-6 w-6 rounded-full bg-emerald-500/20 text-xs text-emerald-300 font-mono">2</span>
+                            Khi cả hai xảy ra tranh cãi nhỏ về bất đồng quan điểm, em muốn giải quyết ra sao?
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-emerald-500/10 hover:border-emerald-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ2" value="A" class="accent-emerald-500 scale-125" required>
+                                <span class="text-xs md:text-sm text-slate-300">Cả hai im lặng, để thời gian tự trôi qua rồi bình thường trở lại</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-emerald-500/10 hover:border-emerald-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ2" value="B" class="accent-emerald-500 scale-125">
+                                <span class="text-xs md:text-sm text-slate-300">Cùng ngồi xuống một cách điềm tĩnh, nhẹ nhàng nói chuyện để thấu hiểu nhau</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-emerald-500/10 hover:border-emerald-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ2" value="C" class="accent-emerald-500 scale-125">
+                                <span class="text-xs md:text-sm text-slate-300">Đấu tranh lập luận xem ai đúng ai sai rõ ràng bằng mọi giá</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="space-y-3">
+                        <p class="font-bold text-emerald-200 flex items-center gap-2">
+                            <span class="flex items-center justify-center h-6 w-6 rounded-full bg-emerald-500/20 text-xs text-emerald-300 font-mono">3</span>
+                            Em nghĩ thế nào về việc phụ nữ có bạn bè riêng và tiếp tục phát triển sự nghiệp sau khi có gia đình?
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-emerald-500/10 hover:border-emerald-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ3" value="A" class="accent-emerald-500 scale-125" required>
+                                <span class="text-xs md:text-sm text-slate-300">Cần tập trung tối đa cho gia đình con cái, nên hạn chế các mối quan hệ ngoài lề</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-emerald-500/10 hover:border-emerald-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ3" value="B" class="accent-emerald-500 scale-125">
+                                <span class="text-xs md:text-sm text-slate-300">Rất khuyến khích! Phụ nữ hiện đại cần tự lập, có bạn bè và ước mơ riêng của mình</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-emerald-500/10 hover:border-emerald-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ3" value="C" class="accent-emerald-500 scale-125">
+                                <span class="text-xs md:text-sm text-slate-300">Chỉ cần lo việc chăm sóc bản thân và hạnh phúc là đủ, sự nghiệp không quá quan trọng</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center pt-4">
+                        <button type="button" onclick="calculateMatch()" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-bold text-slate-950 rounded-full group bg-gradient-to-br from-emerald-400 via-emerald-300 to-amber-400 hover:text-slate-950 focus:ring-4 focus:outline-none focus:ring-emerald-200 transition-all transform hover:scale-105 emerald-glow">
+                            <span class="relative px-8 py-3.5 transition-all ease-in duration-75 bg-slate-950 text-emerald-300 rounded-full group-hover:bg-opacity-0 group-hover:text-slate-950">
+                                Xem Kết Quả Đo Độ Tương Thích 🌹
+                            </span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Result Card -->
+                <div id="matchResult" class="hidden mt-8 p-8 bg-gradient-to-br from-[#041d16]/95 to-[#1c160a]/95 border-2 border-emerald-500/30 rounded-3xl text-center space-y-6 transform scale-95 transition-all duration-300">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 text-3xl animate-bounce">
+                        🕊️
+                    </div>
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Chỉ Số Thấu Hiểu & Đồng Điệu</p>
+                        <div class="text-6xl font-black text-emerald-400 text-emerald-glow mt-2" id="scorePercent">99%</div>
+                    </div>
+                    <p class="text-slate-200 max-w-lg mx-auto text-sm md:text-base leading-relaxed" id="matchFeedback">
+                        Sự đồng điệu giữa em và anh thật tuyệt vời! Quan điểm sống tôn trọng, bình đẳng và hiền hậu của em chính là nền tảng vững chắc nhất cho mối quan hệ của chúng mình. Hãy trao đổi thêm với nhau nhé!
+                    </p>
+                    <div class="pt-2">
+                        <button type="button" onclick="resetMatchTest()" class="text-xs font-bold uppercase tracking-wider text-emerald-400 hover:text-white underline decoration-emerald-500 underline-offset-4">
+                            Làm lại bài kiểm tra
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="relative z-10 py-20 bg-[#030d0a]">
+        <div class="max-w-2xl mx-auto px-6">
+            <div class="premium-card p-8 md:p-12 rounded-3xl border-2 border-emerald-500/20 emerald-glow relative">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-emerald-500 to-amber-500 text-slate-950 font-black px-6 py-2.5 rounded-xl text-xs uppercase tracking-widest shadow-xl">
+                    Hộp Thư Gặp Gỡ Ấm Áp
+                </div>
+
+                <div class="text-center mt-4 mb-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-white gentleman-title">Gửi Lời Nhắn Đến Anh</h3>
+                    <p class="text-slate-400 text-xs mt-1">Một cuộc hẹn cà phê mộc mạc, một buổi trò chuyện bình yên cuối tuần luôn chờ đợi em.</p>
+                </div>
+
+                <form id="gentlemanApplyForm" onsubmit="submitApply(event)" class="space-y-5">
+                    <!-- Name Input -->
+                    <div>
+                        <label class="block text-xs font-bold text-emerald-300 uppercase tracking-widest mb-1.5">Tên của em là?</label>
+                        <input type="text" id="visitorName" required placeholder="Nhập tên đáng yêu của em..." 
+                               class="w-full px-4 py-3 bg-slate-950/60 border border-emerald-500/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-100 placeholder-slate-600 text-sm">
+                    </div>
+
+                    <!-- Contact Input -->
+                    <div>
+                        <label class="block text-xs font-bold text-emerald-300 uppercase tracking-widest mb-1.5">Cách để anh liên lạc?</label>
+                        <input type="text" id="visitorContact" required placeholder="Facebook / Zalo / Số điện thoại..." 
+                               class="w-full px-4 py-3 bg-slate-950/60 border border-emerald-500/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-100 placeholder-slate-600 text-sm">
+                    </div>
+
+                    <!-- Dating Style Dropdown -->
+                    <div>
+                        <label class="block text-xs font-bold text-emerald-300 uppercase tracking-widest mb-1.5">Gu Hẹn Hò Bình Yên Em Thích</label>
+                        <select id="datingStyle" class="w-full px-4 py-3 bg-slate-950/60 border border-emerald-500/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-200 text-sm">
+                            <option value="coffee">Cà phê nhẹ nhàng, nhạc gỗ mộc mạc cuối tuần</option>
+                            <option value="dinner">Nấu bữa tối tại nhà ấm áp dưới ánh nến</option>
+                            <option value="walk">Đi dạo hồ ngắm hoàng hôn yên bình</option>
+                            <option value="custom">Gợi ý khác theo sở thích riêng của em</option>
+                        </select>
+                    </div>
+
+                    <!-- Message Textarea -->
+                    <div>
+                        <label class="block text-xs font-bold text-emerald-300 uppercase tracking-widest mb-1.5">Lời nhắn gửi chân thành</label>
+                        <textarea id="visitorMessage" rows="3" placeholder="Điều gì khiến em ấn tượng nhất ở anh?" 
+                                  class="w-full px-4 py-3 bg-slate-950/60 border border-emerald-500/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-100 placeholder-slate-600 text-sm"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-slate-950 font-bold rounded-xl shadow-xl transition-all transform hover:-translate-y-0.5 uppercase tracking-wider text-xs">
+                        Gửi Lời Mời Trò Chuyện Chân Thành 📩
+                    </button>
+                </form>
+
+                <!-- Success Box View -->
+                <div id="applySuccess" class="hidden text-center p-8 space-y-4">
+                    <div class="w-20 h-20 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-4xl animate-bounce border border-emerald-500/20">
+                        💌
+                    </div>
+                    <h4 class="text-2xl font-bold text-white gentleman-title">Gửi Lời Nhắn Thành Công!</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed max-w-md mx-auto">
+                        Cảm ơn <span id="successVisitor" class="font-bold text-emerald-400">Em</span> rất nhiều! Lời nhắn tử tế của em đã được chuyển trực tiếp đến hòm thư của anh Dương. Anh sẽ chủ động kết nối ngay qua <span id="successContactInfo" class="font-bold text-emerald-400">địa chỉ liên lạc</span> của em nhé!
+                    </p>
+                    <div class="pt-4">
+                        <button type="button" onclick="resetApply()" class="text-xs text-emerald-400 underline hover:text-white">Gửi thêm lời nhắn mới</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Section -->
+    <section class="relative z-10 py-16 bg-[#010604] border-t border-emerald-500/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="bg-emerald-500/10 text-emerald-400 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider border border-emerald-500/20">Lời Chứng Thực</span>
+                <h3 class="text-2xl md:text-3xl font-bold text-white mt-2 gentleman-title">Người Thân Và Bạn Bè Nói Gì Về Anh Dương?</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="premium-card p-6 rounded-2xl border border-emerald-500/5 space-y-3">
+                    <div class="text-emerald-400 text-lg">★★★★★</div>
+                    <p class="text-xs text-slate-300 italic">"Hết sức hiền lành và thương mến gia đình. Dương nó nấu nướng gọn gàng lắm, dọn dẹp nhà cửa ngăn nắp và cực kỳ tôn trọng ý kiến cha mẹ anh em."</p>
+                    <p class="text-xs font-bold text-emerald-400">— Người thân trong gia đình</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="premium-card p-6 rounded-2xl border border-emerald-500/5 space-y-3">
+                    <div class="text-emerald-400 text-lg">★★★★★</div>
+                    <p class="text-xs text-slate-300 italic">"Dương cực kỳ khiêm tốn và hiền hòa. Chưa bao giờ thấy cậu ấy lớn tiếng hay có tư duy áp đặt ý chí lên người khác. Làm việc cùng rất tin cậy."</p>
+                    <p class="text-xs font-bold text-emerald-400">— Đồng nghiệp / Đồng hành</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="premium-card p-6 rounded-2xl border border-emerald-500/5 space-y-3">
+                    <div class="text-emerald-400 text-lg">★★★★★</div>
+                    <p class="text-xs text-slate-300 italic">"Gout ăn uống tinh tế, có gu riêng, thấu hiểu tâm lý mọi người xung quanh và cực kỳ chu đáo trong các chuyến đi chung với nhóm bạn."</p>
+                    <p class="text-xs font-bold text-emerald-400">— Bạn học thân thiết</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-[#010302] text-slate-500 py-10 text-center text-xs border-t border-emerald-500/5">
+        <div class="max-w-6xl mx-auto px-6 space-y-3">
+            <p class="text-emerald-400/40 font-semibold uppercase tracking-widest text-[10px]">© 2026 Nguyễn Trung Dương • Bản Lĩnh Đi Kèm Với Sự Tử Tế & Bình Đẳng</p>
+            <p class="text-slate-600">Trang thông tin kết nối và tìm kiếm bạn đời nghiêm túc.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Web Audio API Synthesizer - Nhạc nền mộc mạc Guitar Acoustic sâu lắng
+        let audioCtx = null;
+        let melodyInterval = null;
+        let isPlaying = false;
+
+        function playAcousticNote(freq, duration, volume = 0.04) {
+            if (!audioCtx) return;
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                // Sóng triangle và màng lọc dốc tạo hiệu ứng acoustic guitar mềm mại
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                
+                gain.gain.setValueAtTime(volume, audioCtx.currentTime);
+                // Ramp giảm dần đều để tiếng vang dịu đi ngọt ngào
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + duration);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        function toggleGentleMusic() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+
+            const musicBtn = document.getElementById('musicBtn');
+
+            if (isPlaying) {
+                clearInterval(melodyInterval);
+                isPlaying = false;
+                musicBtn.innerText = "🎸";
+                musicBtn.classList.remove('bg-emerald-500/30', 'animate-pulse');
+            } else {
+                isPlaying = true;
+                musicBtn.innerText = "⏸️";
+                musicBtn.classList.add('bg-emerald-500/30', 'animate-pulse');
+
+                // Vòng hợp âm mộc mạc thư thái ấm cúng (Gmaj7 - Em7 - Cmaj7 - D7)
+                const chords = [
+                    [196.00, 246.94, 293.66, 392.00], // Gmaj7
+                    [164.81, 196.00, 246.94, 329.63], // Em7
+                    [130.81, 164.81, 196.00, 261.63], // Cmaj7
+                    [146.83, 185.00, 220.00, 293.66]  // D7
+                ];
+                let chordIndex = 0;
+                
+                melodyInterval = setInterval(() => {
+                    const currentChord = chords[chordIndex % chords.length];
+                    // Chạy hợp âm rải dịu êm của Acoustic Guitar
+                    currentChord.forEach((note, i) => {
+                        setTimeout(() => {
+                            playAcousticNote(note, 3.0, 0.03);
+                        }, i * 200);
+                    });
+                    
+                    // Thêm nốt giai điệu thanh thản lơ lửng
+                    if (chordIndex % 2 === 0) {
+                        setTimeout(() => {
+                            const melodyNote = currentChord[Math.floor(Math.random() * currentChord.length)] * 2;
+                            playAcousticNote(melodyNote, 2.0, 0.015);
+                        }, 1000);
+                    }
+                    
+                    chordIndex++;
+                }, 3500);
+            }
+        }
+
+        // Tạo hiệu ứng hạt bay ngẫu nhiên (Cỏ 4 lá và bụi sao vàng)
+        window.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('particle-container');
+            const icons = ['🍀', '✨', '🟢', '🍂', '💚']; // Cỏ may mắn và tia sáng ngọc bảo
+
+            function spawnParticle(customX = null, customY = null) {
+                if (!container) return;
+                const particle = document.createElement('span');
+                particle.classList.add('falling-clover');
+                
+                const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+                particle.innerText = randomIcon;
+                
+                if (customX && customY) {
+                    particle.style.left = customX + 'px';
+                    particle.style.top = customY + 'px';
+                    particle.style.animation = 'fall-effect 6s ease-out forwards';
+                } else {
+                    particle.style.left = Math.random() * 100 + 'vw';
+                    particle.style.animationDuration = Math.random() * 6 + 8 + 's'; // 8s - 14s
+                }
+
+                particle.style.fontSize = Math.random() * 14 + 12 + 'px';
+                particle.style.opacity = Math.random() * 0.6 + 0.3;
+
+                container.appendChild(particle);
+
+                // Giải phóng bộ nhớ
+                setTimeout(() => {
+                    particle.remove();
+                }, 14000);
+            }
+
+            // Tạo tự động theo định kỳ nhẹ nhàng
+            setInterval(spawnParticle, 1000);
+        });
+
+        // Tạo vụ nổ cỏ 4 lá may mắn khi click
+        function spawnCloverBurst(e) {
+            const rect = e.target.getBoundingClientRect();
+            const startX = rect.left + rect.width / 2;
+            const startY = rect.top + window.scrollY;
+
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const container = document.getElementById('particle-container');
+                    const element = document.createElement('span');
+                    element.classList.add('falling-clover');
+                    const icons = ['🍀', '✨', '💖', '💚', '⭐'];
+                    element.innerText = icons[Math.floor(Math.random() * icons.length)];
+                    
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = Math.random() * 100 + 40;
+
+                    element.style.left = startX + 'px';
+                    element.style.top = startY + 'px';
+                    element.style.fontSize = Math.random() * 20 + 14 + 'px';
+                    
+                    element.animate([
+                        { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                        { transform: `translate(${Math.cos(angle) * velocity}px, ${Math.sin(angle) * velocity - 150}px) scale(1.6)`, opacity: 0 }
+                    ], {
+                        duration: 2500,
+                        easing: 'ease-out'
+                    });
+
+                    container.appendChild(element);
+                    setTimeout(() => element.remove(), 2500);
+                }, i * 40);
+            }
+        }
+
+        // Xử lý quiz trắc nghiệm độ thấu hiểu và hòa hợp
+        function calculateMatch() {
+            const form = document.getElementById('compatibilityForm');
+            const q1 = form.elements['compQ1'].value;
+            const q2 = form.elements['compQ2'].value;
+            const q3 = form.elements['compQ3'].value;
+
+            const feedbackBox = document.getElementById('matchResult');
+            const scoreVal = document.getElementById('scorePercent');
+            const scoreFeedback = document.getElementById('matchFeedback');
+
+            if (!q1 || !q2 || !q3) {
+                scoreVal.innerText = "Chưa Trả Lời";
+                scoreFeedback.innerText = "Em hãy hoàn thành cả 3 câu trắc nghiệm để anh Dương đo được chính xác độ hòa hợp tư tưởng nhé!";
+                feedbackBox.classList.remove('hidden');
+                feedbackBox.scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+            // Tính điểm dựa trên sự bình đẳng, hiền lành và sẻ chia (A, B, C)
+            let score = 75.0;
+            if (q1 === 'B') score += 10.0; // Đồng ý chia sẻ
+            if (q1 === 'C') score += 5.0;
+            if (q2 === 'B') score += 10.0; // Đối thoại điềm tĩnh
+            if (q3 === 'B') score += 5.0;  // Tôn trọng sự tự lập của phụ nữ
+
+            if (score > 100) score = 100;
+
+            scoreVal.innerText = score.toFixed(1) + '%';
+            
+            if (score >= 95) {
+                scoreFeedback.innerText = "Tuyệt vời, chỉ số tương hợp đạt mức tối ưu! Em chính là hình mẫu phụ nữ hiện đại, tôn trọng bình đẳng và thấu hiểu chiều sâu mà anh tìm kiếm bấy lâu nay. Hãy nhắn tin cho anh nhé!";
+            } else {
+                scoreFeedback.innerText = "Chỉ số tương hợp rất tốt! Những nét khác biệt nhỏ trong quan điểm sống chính là gia vị ngọt ngào giúp hai tâm hồn bù trừ và hoàn thiện cho nhau một cách trọn vẹn nhất.";
+            }
+
+            feedbackBox.classList.remove('hidden');
+            feedbackBox.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetMatchTest() {
+            document.getElementById('compatibilityForm').reset();
+            document.getElementById('matchResult').classList.add('hidden');
+        }
+
+        // Xử lý đăng ký form liên hệ
+        function submitApply(event) {
+            event.preventDefault();
+            
+            const vName = document.getElementById('visitorName').value;
+            const vContact = document.getElementById('visitorContact').value;
+
+            document.getElementById('successVisitor').innerText = vName;
+            document.getElementById('successContactInfo').innerText = vContact;
+
+            document.getElementById('gentlemanApplyForm').classList.add('hidden');
+            document.getElementById('applySuccess').classList.remove('hidden');
+        }
+
+        function resetApply() {
+            document.getElementById('gentlemanApplyForm').reset();
+            document.getElementById('gentlemanApplyForm').classList.remove('hidden');
+            document.getElementById('applySuccess').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
